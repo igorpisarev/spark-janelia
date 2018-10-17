@@ -40,7 +40,7 @@ def getmasterbyjobID(jobID):
     bjobsout = subprocess.check_output("bjobs -Xr -noheader -J master -o \"JOBID EXEC_HOST\" 2> /dev/null", universal_newlines=True, shell=True)
     masters = bjobsout.splitlines()
 
-    bjobsoutu = subprocess.check_output("bjobs -Xr -noheader -app sparkbatchtest -o \"JOBID EXEC_HOST\" 2> /dev/null", universal_newlines=True, shell=True)
+    bjobsoutu = subprocess.check_output("bjobs -Xr -noheader -app sparkbatch32 -o \"JOBID EXEC_HOST\" 2> /dev/null", universal_newlines=True, shell=True)
     for outline in bjobsoutu.splitlines():
         outlist = outline.split(' ')
         masteruhost = outlist[1].split(':')[0] 
